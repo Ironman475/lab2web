@@ -1,0 +1,29 @@
+body {
+    font-family: cursive;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand img {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 25px;
+}
+
+.board {
+    min-height: 100vh;
+    background-image: url(https://kartinkin.net/uploads/posts/2021-07/1626976093_29-kartinkin-com-p-neitralnii-zadnii-fon-krasivo-29.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.hide {
+    display:none
+    !important
+}

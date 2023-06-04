@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="English">
+
+<head>
+  <title>
+    Make a test
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css"></link>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark navbar-expand-md sticky-top">
+  <div class="container-fluid">
+    <a href="index.html" class="navbar-brand navbar-text" style="font-size: 2em;"><img src="https://is5-ssl.mzstatic.com/image/thumb/Purple115/v4/41/e4/b1/41e4b1e9-37d9-b061-36d2-eabe25837038/source/512x512bb.jpg"
+                                                                                       width="65px" class="align-top">  Test maker</a>
+    <button class="navbar-toggler me-2" type="button" data-toggle="collapse" data-target="#navbarMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-info" style="font-size: 1.5em;" href="quiz.html">Quiz</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" style="font-size: 1.5em;" href="make.html">Make a test</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          <a class="nav-link text-info px-5" style="font-size: 1.5em;" href="profile.html">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" style="font-size: 1.5em;" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary me-3" style="font-size: 1.5em;" href="register.html">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid"  id="container">
+  <div class="board">
+    <div class="d-flex justify-content-center align-items-center" id="quizConfig">
+      <div class="col-6">
+        <div class="form-outline mb-4">
+          <h1 class="title text-center text-primary"><br><strong><i>Number of questions to create</i></strong></h1><br>
+          <input type="number" class="form-control form-control-lg border-primary" id="qTotal" placeholder="1-100">
+        </div>
+        <div class="form-outline mb-4">
+          <a id="generateBtn" class="btn btn-lg btn-primary text-center ms-5 mt-4 mb-5 ps-5 pe-5 bg-opacity-50" type="submit">Generate Form</a>
+        </div>
+      </div>
+    </div>
+
+    <form id="quizForm">
+      <div id="formContainer" class="row hide">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="col-6">
+            <div class="form-outline mb-4" style="margin-top: 10px">
+              <input type="text" id="title" class="form-control form-control-lg border-primary" placeholder="Enter the question">
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" id="input1" class="form-control form-control-lg border-primary" placeholder="Enter answer(A)">
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" id="input2" class="form-control form-control-lg border-primary" placeholder="Enter answer(B)">
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" id="input3" class="form-control form-control-lg border-primary" placeholder="Enter answer(C)">
+            </div>
+            <div class="form-outline mb-4">
+              <input type="text" id="correctValue" class="form-control form-control-lg border-primary"  placeholder="Enter the correct answer. A,B,C?">
+            </div>
+            <div class="form-outline mb-4">
+              <div id="submitBtn" class="col s6">
+                <a id="submit" class="btn btn-lg btn-primary text-center ms-5 mt-4 mb-5 ps-5 pe-5 bg-opacity-50" type="submit"l">Add to bank</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div id="quiz" class="row hide">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="col-6">
+          <h1 class="title text-center text-primary" id="qTitle"><br><strong><i></i></strong></h1><br>
+          <div class="form-outline mb-4">
+            <label>
+              <input id="check1" class="with-gap" type="radio" name='choices' value="A"/>
+              <span id="option1"></span>
+            </label>
+          </div>
+          <div class="form-outline mb-4">
+            <label>
+              <input id="check2" class="with-gap" type="radio" name='choices' value="B"/>
+              <span id="option2"></span>
+            </label>
+          </div>
+          <div class="form-outline mb-4">
+            <label>
+              <input id="check3" class="with-gap" type="radio" name='choices' value="C"/>
+              <span id="option3"></span>
+            </label>
+          </div>
+          <a id="submitAnswer" class="btn btn-lg btn-primary text-center ms-5 mt-4 mb-5 ps-5 pe-5 bg-opacity-50" type="submit">Next Question</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="page-footer bg-primary bg-opacity-50 text-center fixed-bottom">
+  <div class="p-3">
+    <a class="text-white px-5" href="https://mail.google.com">buzhatskiy@gmail.com</a>
+    <a class="text-white px-5" href="https://t.me/tarif_unlimit">@my_acc</a>
+  </div>
+</footer>
+</body>
+
+
+<script src="make.js"></script>
+
+</html>
